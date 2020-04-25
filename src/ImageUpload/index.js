@@ -20,32 +20,39 @@ class ImageUpload extends Component {
   };
 
   handleUpload = () => {
-    const { image } = this.state;
-    const uploadTask = storage.ref(`images/${image.name}`).put(image);
-    uploadTask.on(
-      "state_changed",
-      snapshot => {
-        // progress function ...
-        const progress = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
-        this.setState({ progress });
-      },
-      error => {
-        // Error function ...
-        console.log(error);
-      },
-      () => {
-        // complete function ...
-        storage
-          .ref("images")
-          .child(image.name)
-          .getDownloadURL()
-          .then(url => {
-            this.setState({ url });
-          });
-      }
-    );
+    if (this.state.image === null) {
+      alert('No file selected')
+    }
+    else {
+
+      const { image } = this.state;
+      const uploadTask = storage.ref(`files/${image.name}`).put(image);
+      uploadTask.on(
+        "state_changed",
+        snapshot => {
+          // progress function ...
+          const progress = Math.round(
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          );
+          this.setState({ progress });
+        },
+        error => {
+          // Error function ...
+          console.log(error);
+        },
+        () => {
+          // complete function ...
+          storage
+            .ref("files")
+            .child(image.name)
+            .getDownloadURL()
+            .then(url => {
+              this.setState({ url });
+            });
+        }
+      );
+    }
+
   };
   render() {
     return (
@@ -54,11 +61,9 @@ class ImageUpload extends Component {
         <h2>Upload your 3D model </h2>
         <br />
         <br />
-        <div className="row">
-          <div class="zi-progress-bar">
-            <div class="zi-progress">
-              <div class="zi-progress__inner" style={{ width: this.state.progress + '%' }}></div>
-            </div>
+        <div class="zi-progress-bar">
+          <div class="zi-progress">
+            <div class="zi-progress__inner" style={{ width: this.state.progress + '%' }}></div>
           </div>
         </div>
         <br />
@@ -67,7 +72,7 @@ class ImageUpload extends Component {
         <br />
         <div class="zi-input-group prefix">
           <span class="zi-label prefix">
-            <input type="file" onChange={this.handleChange} style={{width: '50%'}} />
+            <input type="file" onChange={this.handleChange} style={{ width: '50%' }} required />
           </span>
           <input className="file-path validate zi-input" placeholder="Enter URL" type="text" />
         </div>
