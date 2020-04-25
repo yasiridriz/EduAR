@@ -51,24 +51,25 @@ class ImageUpload extends Component {
     return (
       <div className="center">
         <br />
-        <h2>React Firebase Image Uploader</h2>
+        <h2>Upload your 3D model </h2>
         <br />
         <br />
         <div className="row">
-          <progress value={this.state.progress} max="100" className="progress" />
+          <div class="zi-progress-bar">
+            <div class="zi-progress">
+              <div class="zi-progress__inner" style={{ width: this.state.progress + '%' }}></div>
+            </div>
+          </div>
         </div>
         <br />
         <br />
         <br />
-
-        <div className="file-field input-field zi-input-group prefix">
-          <div className="zi-btn">
-            <span>File</span>
-            <input type="file" onChange={this.handleChange} />
-          </div>
-          <div className="file-path-wrapper">
-            <input className="file-path validate" type="text" />
-          </div>
+        <br />
+        <div class="zi-input-group prefix">
+          <span class="zi-label prefix">
+            <input type="file" onChange={this.handleChange} style={{width: '50%'}} />
+          </span>
+          <input className="file-path validate zi-input" placeholder="Enter URL" type="text" />
         </div>
         <br />
         <br />
