@@ -3,13 +3,14 @@ import "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD8p_GaIouLgXNymFMyCWM7KglBwuhfD3s",
-  authDomain: "eduar-e8265.firebaseapp.com",
-  databaseURL: "https://eduar-e8265.firebaseio.com",
-  projectId: "eduar-e8265",
-  storageBucket: "eduar-e8265.appspot.com",
-  messagingSenderId: "37522154283",
-  appId: "1:37522154283:web:465b3937f262c337e39b6e"
+  apiKey: "AIzaSyD5RZorSvd0Vqho3zr68BbR4ywUrg_z2mM",
+  authDomain: "eduar-5dcad.firebaseapp.com",
+  databaseURL: "https://eduar-5dcad.firebaseio.com",
+  projectId: "eduar-5dcad",
+  storageBucket: "eduar-5dcad.appspot.com",
+  messagingSenderId: "213508622109",
+  appId: "1:213508622109:web:70f5d81eab60b7098d03f4",
+  measurementId: "G-X22HCJ8CNL"
 };
 
 // Initialize Firebase
