@@ -86,10 +86,11 @@ class ImageUpload extends Component {
         </button>
         <br />
         <br />
+
         <img
-          src={this.state.url || "https://via.placeholder.com/400x300"}
+          src={this.state.url || "https://www.cherrylondon.com/wp-content/uploads/2017/10/placeholder-400x400.jpg"}
           alt="Uploaded Images"
-          height="300"
+          height="400"
           width="400"
         />
       </div>
