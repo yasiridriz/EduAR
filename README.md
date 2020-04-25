@@ -1,8 +1,7 @@
-## Upload Images to Firebase and Display on Page Using React
+##Upload files to Firebase Storage
 
 # Tools
 * create-react-app cli
-* material css UI
 * Firebase
 * Firebase Storage
 
